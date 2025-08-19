@@ -2,102 +2,81 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio Formulario</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        fieldset {
-            border: 2px solid #444;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        legend {
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-        label {
-            display: block;
-            margin: 8px 0 4px;
-        }
-        input, select, textarea {
-            margin-bottom: 10px;
-            padding: 6px;
-            width: 250px;
-        }
-        .inline {
-            display: inline-block;
-            margin-right: 15px;
-        }
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 6px;
-            background-color: #0078D7;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #005bb5;
-        }
-    </style>
+    <title>Formulario</title>
 </head>
 <body>
 
-<h3>¡Suscríbase a Nuestro Portal de Noticias! Crear una cuenta es rápido!</h3>
+<h3>¡Suscríbase a nuestro portal de noticias!</h3>
 
 <form action="#" method="post">
-    <fieldset>
-        <legend>Formulario de Registro</legend>
 
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+    <p>
+        Nombre: 
+        <input type="text" name="nombre" placeholder="Ingrese su nombre" size="40" maxlength="40" required>
+    </p>
 
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" required>
+    <p>
+        Apellido: 
+        <input type="text" name="apellido" placeholder="Ingrese su apellido" size="40" maxlength="40" required>
+    </p>
 
-        <label>Sexo:</label>
-        <label class="inline"><input type="radio" name="sexo" value="masculino" required> Masculino</label>
-        <label class="inline"><input type="radio" name="sexo" value="femenino"> Femenino</label>
+    <p>
+        Sexo: 
+        <input type="radio" name="sexo" value="M" required> Masculino
+        <input type="radio" name="sexo" value="F"> Femenino
+    </p>
 
-        <label for="edad">Edad:</label>
-        <input type="number" id="edad" name="edad" min="1" max="120">
+    <p>
+        Edad: 
+        <input type="number" name="edad" placeholder="Edad" maxlength="3" size="40">
+    </p>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+    <p>
+        Email: 
+        <input type="email" name="email" placeholder="ejemplo@mail.com" size="40" maxlength="40" required>
+    </p>
 
-        <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" name="usuario" required>
+    <p>
+        Usuario: 
+        <input type="text" name="usuario" placeholder="Nombre de usuario" size="40" maxlength="20" required>
+    </p>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+    <p>
+        Password: 
+        <input type="password" name="password" placeholder="Ingrese su contraseña" size="40" maxlength="20" required>
+    </p>
 
-        <label for="confirmar">Confirmar Password:</label>
-        <input type="password" id="confirmar" name="confirmar" required>
+    <p>
+        Confirmar Password: 
+        <input type="password" name="confirmar" placeholder="Repita su contraseña" size="40" maxlength="20" required>
+    </p>
 
-        <label for="servicio">Tipo de servicio:</label>
-        <select id="servicio" name="servicio">
+    <p>
+        Tipo de servicio: 
+        <select name="servicio">
             <option value="free">Free</option>
             <option value="standard">Standard</option>
             <option value="premium">Premium</option>
         </select>
+    </p>
 
-        <label>Tema:</label>
-        <label class="inline"><input type="checkbox" name="tema" value="politica"> Política</label>
-        <label class="inline"><input type="checkbox" name="tema" value="negocios"> Negocios</label>
-        <label class="inline"><input type="checkbox" name="tema" value="tecnologia"> Tecnología</label>
-        <label class="inline"><input type="checkbox" name="tema" value="salud"> Salud</label>
+    <p>
+        Tema: 
+        <input type="checkbox" name="tema" value="politica"> Política
+        <input type="checkbox" name="tema" value="negocios"> Negocios
+        <input type="checkbox" name="tema" value="tecnologia"> Tecnología
+        <input type="checkbox" name="tema" value="salud"> Salud
+    </p>
 
-        <label for="comentario">Agregue un comentario:</label>
-        <textarea id="comentario" name="comentario" rows="4" cols="30"></textarea>
+    <p>
+        Agregue un comentario:<br>
+        <textarea name="comentario" rows="4" cols="40" placeholder="Escriba su mensaje aquí..."></textarea>
+    </p>
 
-        <br>
-        <button type="submit">Enviar</button>
-    </fieldset>
+    <p>
+        <input type="submit" value="Enviar">
+    </p>
 </form>
 
 </body>
 </html>
-
