@@ -1,0 +1,10 @@
+.poke-card{
+    border: 1px solid gray;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.pokedex{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

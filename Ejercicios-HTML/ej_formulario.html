@@ -1,92 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Ejercicio Formulario</title>
     <style>
-        form {
-            display: block;
-            margin-top: 0em;
-        }
+      form {
+        display: block;
+        margin-top: 0em;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!--Cree un Formulario con los campos que se proponen a continuacion-->
+    <!--Agregue el atributo legend-->
 
-<h3>Suscribase a Nuestro Portal de Noticias! Crear una cuenta es rápido!</h3>
+    <!--Si tienes dudas de como hacer un formulario, puedes consultar:
+    https://www.w3schools.com/html/tryit.asp?filename=tryhtml_elem_output-->
 
-<form id="formulario_suscripcion">
-    <p>
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="Nombre" placeholder="Nombre">
-    </p>
+    <h3>
+      Suscribase a Nuestro Portal de Noticias! Crear una cuenta es rápido!
+    </h3>
+    <form name="suscribirse">
+      <fieldset>
+        <legend>Persona</legend>
+        <p>
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            size="40"
+            maxlength="30"
+            placeholder="Ingrese su Nombre"
+          />
+        </p>
+        <p>
+          <label for="apellido">Apellido:</label>
+          <input
+            type="text"
+            name="apellido"
+            id="apellido"
+            size="40"
+            maxlength="30"
+            placeholder="Apellido"
+          />
+        </p>
+        <p>
+          Sexo:
+          <input type="radio" name="genero" value="masculino" id="masculino" />
+          <label for="masculino">Masculino</label>
+          <input type="radio" name="genero" value="femenino" id="femenino" />
+          <label for="femenino"> Femenino </label>
+          <input type="radio" name="genero" value="noComp" id="noCompartir" />
+          <label for="noCompartir"> Prefiero No Compartirlo </label>
+        </p>
+        <p>
+          <label for="edad">Edad:</label>
+          <input
+            type="number"
+            name="edad"
+            id="edad"
+            placeholder="Edad"
+            maxlength="3"
+          />
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Información de la Cuenta</legend>
+        <p>
+          <label for="email"> Email: </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            size="40"
+            placeholder="Email"
+            maxlength="40"
+          />
+        </p>
+        <p>
+          <label for="usuario"> Usuario: </label>
+          <input
+            type="text"
+            name="usuario"
+            size="40"
+            placeholder="Usuario"
+            maxlength="30"
+          />
+        </p>
+        <p>
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            name="pass"
+            id="password"
+            size="40"
+            placeholder="Password"
+            maxlength="30"
+          />
+        </p>
+        <p>
+          <label for="confirmar-pasword"> Confirmar Password: </label>
+          <input
+            type="password"
+            name="pass2"
+            id="confirmar-pasword"
+            size="40"
+            placeholder="Password"
+            maxlength="30"
+          />
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Tipo de Servicio</legend>
+        <p>
+          <label for="tipo-servicio"> Tipo de servicio: </label>
+          <select name="tipo-servicio" id="tipo-servicio">
+            <option value="free">Free</option>
+            <option value="standard">Standard</option>
+            <option value="Premium">Premium</option>
+          </select>
+        </p>
+        <p>
+          Tema:
+          <input
+            type="checkbox"
+            name="ck_politica"
+            id="politica"
+            value="politica"
+          />
+          <label for="politica"> Política </label>
 
-    <p>
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="Apellido" placeholder="Apellido">
-    </p>
+          <input
+            type="checkbox"
+            name="ck_negocios"
+            id="negocios"
+            value="negocios"
+          />
+          <label for="negocios"> Negocios </label>
 
-    <p>
-        Sexo:
-        <label for="masculino">Masculino</label>
-        <input type="radio" id="masculino" name="Sexo" value="Masculino">
-        <label for="femenino">Femenino</label>
-        <input type="radio" id="femenino" name="Sexo" value="Femenino">
-    </p>
+          <input
+            type="checkbox"
+            name="ck_tecnologia"
+            id="tecnologia"
+            value="tecnologia"
+          />
+          <label for="tecnologia"> Tecnología </label>
 
-    <p>
-        <label for="edad">Edad:</label>
-        <input type="number" id="edad" name="Edad" placeholder="Edad">
-    </p>
-
-    <p>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="Email" placeholder="email@dominio.com">
-    </p>
-
-    <p>
-        <label for="usuario">User:</label>
-        <input type="text" id="usuario" name="Usuario" placeholder="User">
-    </p>
-
-    <p>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="Pass" placeholder="Password">
-    </p>
-
-    <p>
-        <label for="confirmarpass">Confirmar Password:</label>
-        <input type="password" id="confirmarpass" name="ConfirmarPass" placeholder="Confirmar Password">
-    </p>
-
-    <p>
-        Tipo de servicio:
-        <label for="free">Free</label>
-        <input type="checkbox" id="free" name="Tipo_de_servicio" value="Free">
-        <label for="standard">Standard</label>
-        <input type="checkbox" id="standard" name="Tipo_de_servicio" value="Standard">
-        <label for="premium">Premium</label>
-        <input type="checkbox" id="premium" name="Tipo_de_servicio" value="Premium">
-    </p>
-
-    <p>
-        <label for="tema">Tema:</label>
-        <select id="tema" name="Tema">
-            <option>Política</option>
-            <option>Negocios</option>
-            <option>Tecnología</option>
-            <option>Salud</option>
-        </select>
-    </p>
-
-    <p>
-        <label for="comentario">Agregue un comentario:</label>
-        <textarea id="comentario" name="Comentario"></textarea>
-    </p>
-
-    <p>
-        <button type="submit">Boton de Enviar</button>
-    </p>
-
-</form>
-
-</body>
+          <input type="checkbox" id="salud" name="ck_salud" value="salud" />
+          <label for="salud"> Salud </label>
+        </p>
+        <p>
+          <label for="comentario"> Agregue un comentario: </label>
+          <textarea id="comentario">
+            Escriba un comentario...
+        </textarea
+          >
+        </p>
+      </fieldset>
+      <button type="button">Boton de Enviar</button>
+    </form>
+  </body>
+</html>

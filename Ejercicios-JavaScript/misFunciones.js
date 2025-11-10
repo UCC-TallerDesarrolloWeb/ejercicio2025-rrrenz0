@@ -1,57 +1,85 @@
 /**
- * Descripción
- * @method Nombre de la función
- * @param Parámetro A
- * @param Parámetro B
- * @return Valor que retorna
+ * Convierte las unidades ingresadas por el usuario
+ * @method convertirUnidades
+ * @param {string} unidad - Unidad ingresada: metro, pie, pulgada, yarda
+ * @param {number} valor - Valor numérico ingresado por el usuario (puede ser con coma)
  */
+let convertirUnidades = (unidad, valor) => {
+  let metro, pie, pulgada, yarda;
 
-function conversorUnidades(unidad, valor) {
-    let metro, pie, pulgada, yarda;
+  if (valor.includes(",")) {
+    valor = valor.replace(",", ".");
+  }
 
-    console.log(valor); 
-    console.log(isNaN(valor));
+  if (isNaN(valor)) {
+    alert("El valor ingresado no es correcto");
+    metro = "";
+    pie = "";
+    pulgada = "";
+    yarda = "";
+  } else {
+    if (unidad == "unid_metro") {
+      metro = valor;
+      pie = 3.28 * metro;
+      pulgada = 39.37 * metro;
+      yarda = 1.0936 * metro;
+    } else if (unidad == "unid_pie") {
+      pie = valor;
+      metro = 0.3048 * pie;
+      pulgada = 12 * pie;
+      yarda = 0.3333 * pie;
+    } else if (unidad == "unid_pulgada") {
+      pulgada = valor;
+      //tarea
+    } else {
+      yarda = valor;
+      //tarea
+    }
+  }
 
-    if (isNaN(valor)){
-        alert("El valor introducido no es un número");
-        metro = "";
-        pie = "";
-        pulgada = "";
-        yarda = "";
-        document.getElementById("metro").value=metro;
-        document.getElementById("pie").value=pie;
-        document.getElementById("pulgada").value=pulgada;
-        document.getElementById("yarda").value=yarda;
-        return;
-    }   
+  document.getElementById("metro").value = Number(metro).toFixed(2);
+  document.getElementById("pie").value = Math.round(pie * 100) / 100;
+  document.getElementById("pulgada").value = Number(pulgada).toFixed(2);
+  document.getElementById("yarda").value = Math.round(yarda * 100) / 100;
+};
 
-if (unidad=="unid_metro"){
-    metro=valor;
-    pie=3.28*metro;
-    pulgada=39.37*metro;
-    yarda=1.09*metro;
+/**
+ * Convierte grados a radianes y viceversa
+ * @method convertirGR
+ * @param {string} id - Grados o Radianes
+ * @param {number} valor - Valor numérico ingresado por el usuario (puede ser con coma)
+ */
+let convertirGR = (id, valor) => {
+  let cantGrados, cantRadianes;
+  if (id == "grados") {
+    cantGrados = valor;
+    cantRadianes = (cantGrados * Math.PI) / 180;
+    document.getElementById("radianes").value = cantRadianes;
+  } else {
+    cantRadianes = valor;
+    cantGrados = (cantRadianes * 180) / Math.PI;
+    document.getElementById("grados").value = cantGrados;
+  }
+};
 
-} else if (unidad=="unid_pulgada"){
-    pulgada=valor;
-    metro=pulgada/39.37;
-    pie=3.28*metro;
-    yarda=1.09*metro;
+let mostrarOcultarDiv = (id) => {
+  // if (id == "mostrarDiv") {
+  //   document.getElementsByName("unDiv")[0].style.display = "block";
+  // } else {
+  //   document.getElementsByName("unDiv")[0].style.display = "none";
+  // }
 
-} else if (unidad=="unid_pie"){
-    pie=valor;
-    metro=pie/3.28;
-    pulgada=39.37*metro;
-    yarda=1.09*metro;
+  const mostrar = id == "mostrarDiv" ? "block" : "none";
+  document.getElementsByName("unDiv")[0].style.display = mostrar;
+};
 
-} else if (unidad=="unid_yarda"){
-    yarda=valor;
-    metro=yarda/1.09;
-    pie=3.28*metro;
-    pulgada=39.37*metro;
-}
+let sumar = () => {
+  let sum1 = document.getElementById("nums1").value;
+  let sum2 = document.getElementById("nums2").value;
 
-    document.getElementById("metro").value=metro;
-    document.getElementById("pie").value=pie;
-    document.getElementById("pulgada").value=pulgada;
-    document.getElementById("yarda").value=yarda;
-}
+  if (isNaN(sum1) || isNaN(sum2)) {
+    alert("Una de las variables ingresadas no es numérica");
+  } else {
+    document.getElementById("totalS").value = Number(sum1) + Number(sum2);
+  }
+};

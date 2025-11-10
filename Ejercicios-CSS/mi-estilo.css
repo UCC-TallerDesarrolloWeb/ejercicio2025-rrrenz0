@@ -1,0 +1,34 @@
+div {
+        border: 1px solid rgb(11, 11, 67);
+        margin: 20px;
+        padding: 10px;
+        background-color: rgba(203, 203, 243, 0.519);
+        border-radius: 15px;
+        box-shadow: 10px 12px #4b4848;
+      }
+
+      #icono-usuario {
+        width: 18%;
+        float: left;
+        border-radius: 50%;
+      }
+
+      /*Estilos del body principal*/
+      body {
+        text-align: center;
+        font-family: "Playwrite VN", cursive;
+        background: linear-gradient(
+          to right,
+          rgb(10, 24, 151),
+          rgb(108, 108, 138)
+        );
+      }
+
+      .titulo {
+        text-shadow: 10px 5px #4b4848;
+      }
+
+      .pos-fix{
+        position: fixed;
+        top: 0;
+      }
